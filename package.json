@@ -1,0 +1,34 @@
+{
+  "name": "regional-warehousing",
+  "version": "1.0.0",
+  "description": "regional warehousing home website",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/projekt-matara/regional-warehousing.git"
+  },
+  "author": "Alex Allen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/projekt-matara/regional-warehousing/issues"
+  },
+  "homepage": "https://github.com/projekt-matara/regional-warehousing#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-coffee": "^3.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.5.0",
+    "gulp-css-condense": "^1.1.2",
+    "gulp-pug": "^4.0.1",
+    "gulp-ruby-sass": "^3.0.0",
+    "gulp-stylus": "^2.7.0",
+    "gulp-uglify": "^3.0.0",
+    "pump": "^3.0.0"
+  }
+}
