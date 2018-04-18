@@ -13,15 +13,31 @@ const coffeeSrc = './src/coffeescript/*.coffee'
 const sassSrc = './src/sass/index.sass'
 const pugSrc = './src/pug/*.pug'
 
-gulp.task('build-coffee', cb => {
+gulp.task('build-js-vendor', cb => {
   pump([
-    gulp.src(coffeeSrc),
-    coffee(),
+    gulp.src([
+      './node_modules/jquery/dist/jquery.js', 
+      './node_modules/foundation-sites/js/foundation.core.js',
+      './node_modules/foundation-sites/js/foundation.util.mediaQuery.js',
+      './node_modules/foundation-sites/js/*.js'
+    ]),
     babel(),
-    concat('app.js'),
+    concat('vendor.js'),
     uglify(),
-    gulp.dest('./build/public/scripts')
+    gulp.dest('./build/public/scripts/vendor')
   ], cb)
+})
+
+gulp.task('build-coffee', cb => {
+  // pump([
+  //   gulp.src(coffeeSrc),
+  //   coffee({bare: true}),
+  //   gulp.dest('./build/public/scripts/')
+  // ], cb)
+
+  return gulp.src('./src/coffeescript/app.coffee')
+    .pipe(coffee({bare: true}))
+    .pipe(gulp.dest('./build/public/scripts'))
 })
 
 gulp.task('build-sass', cb => {
@@ -54,6 +70,7 @@ gulp.task('connect', () => {
     livereload: true
   })
 })
-gulp.task('build-assets', ['build-pug', 'build-sass', 'build-coffee'])
+
+gulp.task('build-assets', ['build-pug', 'build-sass', 'build-js-vendor', 'build-coffee'])
 
 gulp.task('default', ['build-assets', 'connect', 'watch'])
