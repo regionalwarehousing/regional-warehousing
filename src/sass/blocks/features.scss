@@ -1,0 +1,57 @@
+.marketing-site-features {
+  text-align: center;
+  padding: 5rem 0;
+  padding-top: 6em;
+  padding-bottom: 6em;
+
+  p {
+    padding-bottom: 2em;
+  }
+
+  .row {
+    .fa-snowflake {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: $primary-color;
+    }
+    
+    .fa-lock {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: $primary-color;
+    }
+
+    .fa-key {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: $primary-color;
+    }
+
+    .fa-shield-alt {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: $primary-color;
+    }
+
+    .marketing-site-features-title {
+      font-size: 1.125rem;
+      margin-bottom: 1rem;
+    }      
+  }
+
+  @media screen and (min-width: 40em) {
+    text-align: left;
+  }
+}
+
+.marketing-site-features-headline {
+  text-align: center;
+  font-size: 24px;
+}
+
+.marketing-site-features-subheadline {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+

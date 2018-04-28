@@ -1,0 +1,22 @@
+// optional demo styles
+.top-bar {
+  background: #212121;
+
+  .menu {
+    background: transparent;
+  }
+
+  .menu-text {
+    color: $hero-full-screen-text-color;
+  }
+
+  .menu li {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu a {
+    color: $hero-full-screen-text-color;
+    font-weight: bold;
+  }
+}

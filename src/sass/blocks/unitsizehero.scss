@@ -1,0 +1,17 @@
+$hero-height: 60vh;
+
+.hero-section {
+  background: url('../images/IMG_1062.jpg') 50% no-repeat;
+  background-size: cover;
+  height: $hero-height;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .hero-section-text {
+    color: $white;
+    text-shadow: 1px 1px 2px $black;
+  }
+}
+

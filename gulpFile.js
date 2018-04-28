@@ -9,38 +9,23 @@ const uglify = require('gulp-uglify')
 const pump = require('pump')
 const cssCondense = require('gulp-css-condense')
 
-const jsSrc = './src/js/*.js'
+const coffeeSrc = './src/coffee/*.coffee'
 const sassSrc = './src/sass/index.sass'
 const pugSrc = './src/pug/*.pug'
 
-gulp.task('build-js', cb => {
+gulp.task('build-coffee', cb => {
   pump([
-    gulp.src([
-      './node_modules/jquery/dist/jquery.js', 
-      './node_modules/foundation-sites/js/foundation.core.js',
-      // './node_modules/foundation-sites/js/foundation.util.mediaQuery.js',
-      './src/js/app.js'
-    ]),
-    babel(),
+    gulp.src(coffeeSrc),
+    coffee({bare: true}),
     concat('app.js'),
     uglify(),
-    gulp.dest('./build/public/scripts')
+    gulp.dest('./build/public/scripts/')
   ], cb)
 })
 
-// gulp.task('build-coffee', cb => {
-//   pump([
-//     gulp.src(coffeeSrc),
-//     coffee({bare: true}),
-//     concat('app.js'),
-//     uglify(),
-//     gulp.dest('./build/public/scripts/')
-//   ], cb)
-// })
-
 gulp.task('build-sass', cb => {
   sass(sassSrc, {
-    loadPath: ['./src/sass', 'node_modules/foundation-sites/scss']
+    loadPath: ['./src/sass', './src/sass/blocks', 'node_modules/foundation-sites/scss']
   })
     .on('error', sass.logError)
     .pipe(concat('index.css'))
@@ -57,9 +42,10 @@ gulp.task('build-pug', cb => {
 })
 
 gulp.task('watch', () => {
-  gulp.watch(jsSrc, ['build-coffee'])
-  gulp.watch(sassSrc, ['build-sass'])
-  gulp.watch(pugSrc, ['build-pug'])
+  gulp.watch(coffeeSrc, ['build-coffee'])
+  gulp.watch('./src/sass/**/*.sass', ['build-sass'])
+  gulp.watch('./src/sass/blocks/*.scss', ['build-sass'])
+  gulp.watch('./src/pug/**/*.pug', ['build-pug'])
 })
 
 gulp.task('connect', () => {
@@ -69,6 +55,6 @@ gulp.task('connect', () => {
   })
 })
 
-gulp.task('build-assets', ['build-pug', 'build-sass', 'build-js'])
+gulp.task('build-assets', ['build-pug', 'build-sass', 'build-coffee'])
 
 gulp.task('default', ['build-assets', 'watch', 'connect'])

@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'Roboto Regular';
+  src: url('../fonts/Roboto-Regular-webfont.woff');
+}
+
+@font-face {
+  font-family: 'Roboto Bold';
+  src: url('../fonts/Roboto-Bold-webfont.woff');
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Roboto Bold', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+}
+
+p, a, li{
+  font-family: 'Roboto Regular', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+}

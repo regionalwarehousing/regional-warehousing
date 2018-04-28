@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    link(rel="stylesheet", href="./public/stylesheets/index.css")
-    title Regional Warehousing
-  body
-    h1 Testing 
+extends ./layouts/layout.pug
 
-    script(src="./public/scripts/app.js")
+block content
+  include partials/full-hero.pug
+  include partials/features.pug
+  include partials/features-two.pug
+  include partials/reviews.pug
+  include partials/footer.pug
