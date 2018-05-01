@@ -26,6 +26,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-connect": "^5.5.0",
     "gulp-css-condense": "^1.1.2",
+    "gulp-gzip": "^1.4.2",
     "gulp-pug": "^4.0.1",
     "gulp-ruby-sass": "^3.0.0",
     "gulp-stylus": "^2.7.0",

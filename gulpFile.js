@@ -44,7 +44,7 @@ gulp.task('build-pug', cb => {
 gulp.task('watch', () => {
   gulp.watch(coffeeSrc, ['build-coffee'])
   gulp.watch('./src/sass/**/*.sass', ['build-sass'])
-  gulp.watch('./src/sass/blocks/*.scss', ['build-sass'])
+  gulp.watch('./src/sass/**/*.scss', ['build-sass'])
   gulp.watch('./src/pug/**/*.pug', ['build-pug'])
 })
 
@@ -55,6 +55,5 @@ gulp.task('connect', () => {
   })
 })
 
-gulp.task('build-assets', ['build-pug', 'build-sass', 'build-coffee'])
-
-gulp.task('default', ['build-assets', 'watch', 'connect'])
+gulp.task('build', ['build-pug', 'build-sass', 'build-coffee'])
+gulp.task('default', ['build', 'watch', 'connect'])
