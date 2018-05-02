@@ -25,7 +25,7 @@ gulp.task('build-coffee', cb => {
 
 gulp.task('build-sass', cb => {
   sass(sassSrc, {
-    loadPath: ['./src/sass', './src/sass/blocks', 'node_modules/foundation-sites/scss']
+    loadPath: ['./src/sass', './src/sass/blocks', './node_modules/foundation-sites/scss', './src/node_modules/foundation-sites']
   })
     .on('error', sass.logError)
     .pipe(concat('index.css'))
