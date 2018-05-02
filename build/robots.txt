@@ -1,0 +1,4 @@
+Sitemap: http://homepage.com/sitemap.xml
+
+User-agent: *
+Disallow: /public/images/
